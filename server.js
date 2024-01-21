@@ -22,9 +22,9 @@ function request_handler(req, res){
     else if(req.url.startsWith("/search")){
         const user_input = new URL(req.url, `https://${req.headers.host}`).searchParams;     
         console.log(user_input);
-        const location = user_input.get('location');  
+        const location = user_input.get('location');   // gets location
         if(location == null || location == ""){
-            res.writeHead(404, {"Content-Type": "text/html"});
+            res.writeHead(404, {"Content-Type": "text/html"}); 
             res.end("<h1>Missing Input</h1>");        
         }
         else{
