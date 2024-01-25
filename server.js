@@ -15,13 +15,13 @@ function listen_handler(){
 function request_handler(req, res){
     console.log(req.url);
     if(req.url === "/"){
-        const form = fs.createReadStream("html/index.html");
+        const form = fs.createReadStream("index.html");
 		res.writeHead(200, {"Content-Type": "text/html"})
 		form.pipe(res);
     }
     else if(req.url.startsWith("/search")){
         const user_input = new URL(req.url, `https://${req.headers.host}`).searchParams;     
-        console.log(user_input);
+        console.log(user_input)
         const location = user_input.get('location');   // gets location
         if(location == null || location == ""){
             res.writeHead(404, {"Content-Type": "text/html"}); 
