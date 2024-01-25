@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>VacaRecommend</title>
+		<style>
+			body {
+				background-color: #BFBFBF;
+			}
+			body, form{
+				margin:20px auto;
+				max-width:800px;
+				overflow-x:hidden;
+			}
+			fieldset{
+				display: flex;
+				height: 60px;
+			}
+			legend {
+				color: #731702;
+				font-size: 26px;
+			}
+			label, input {
+				font-size: 22px;
+				color: #578BF2;
+			}
+			input#description{
+				flex-grow:50;
+				margin: 0 20px;
+			}
+			/*Not being used by my program*/
+			input#location{
+				flex-grow:50;
+				margin: 0 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="search" method="get">
+			<fieldset>
+				<legend>Search by City Name:</legend>
+				<label for="description">Search By City Name: </label>
+				<input id="description" name="city" type="text" />
+				<input type="submit" />
+			</fieldset>
+		</form>
+	</body>
+</html>
