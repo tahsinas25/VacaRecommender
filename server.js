@@ -1,7 +1,7 @@
 const fs = require('fs');
 const http = require('http');    // for hosting our server
 const https = require('https');  // for the API
-
+const api_key = require('./credentials.json')
 const port = 3000;
 
 const server = http.createServer();
@@ -20,6 +20,7 @@ function request_handler(req, res){
 		form.pipe(res);
     }
     else if(req.url.startsWith("/search")){
+        let key = api_key[0]["API-KEY"] 
         const user_input = new URL(req.url, `https://${req.headers.host}`).searchParams;     
         console.log(user_input);
         const location = user_input.get('location');   // gets location
@@ -32,9 +33,9 @@ function request_handler(req, res){
                 method: 'GET',
                 hostname: 'ai-trip-planner.p.rapidapi.com',
                 port: null,
-                path: '/?days=3&destination=London%2CUK',
+                path: `/?days=3&destination=${location}`,
                 headers: {
-                    'X-RapidAPI-Key': 'f58fc5a122mshc89ec28cdccf17fp12bc53jsndca1eaf35100',
+                    'X-RapidAPI-Key': key,
                     'X-RapidAPI-Host': 'ai-trip-planner.p.rapidapi.com'
                 }
             };
