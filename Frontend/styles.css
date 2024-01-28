@@ -1,0 +1,24 @@
+body {
+    background-color: rgba(43, 35, 2, 0.267);
+}
+body, form{
+    margin:20px auto;
+    max-width:800px;
+    overflow-x:hidden;
+}
+fieldset{
+    display: flex;
+    height: 60px;
+}
+legend {
+    color: #731702;
+    font-size: 26px;
+}
+label, input {
+    font-size: 22px;
+    color: #578BF2;
+}
+input#description{
+    flex-grow:50;
+    margin: 0 20px;
+}
