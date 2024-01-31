@@ -3,52 +3,84 @@
 	<head>
 		<style>.title{
 			position: absolute; 
-			top: 27%;
+			top: 47%;
 			left: 35%; 
 		   }
 
 		   .title h1{
-			color: rgb(59, 21, 21);
+			position: relative;
+			top: 90%;
+			color: rgb(255, 255, 255);
 			font-size: 70px;
 		   }
 		   .title h2{
 			position: absolute;
-			top: 50%;
+			top: 270%;
 			left: 35%;
-			color: rgb(59, 21, 21);
+			color: rgb(255, 255, 255);
 			font-size: 35px;
 		   }
 
 		   .title h3{
 			position: absolute;
-			top: 77%;
+			top: 300%;
 			left: 30%;
-			color: rgb(59, 21, 21);
+			color: rgb(255, 255, 255);
 			font-size: 20px;
 		   }
 
-.box {
-background-color:rgb(59, 21, 21);
-  width: 1750px;
-  padding: 100px;
-  margin: 0px;
-  position: absolute;
-  top: 800px;
-}
 body {
- background-image: url("backgroundimage1.png");
+ background-image: url("image2.jpg");
  position: relative;
  left: 10px;
  top: 0px;
  background-repeat: no-repeat;
  background-size: cover;
 }	
+.background-2 {
+  background-image: url('image3.jpg');
+  background-repeat: no-repeat;
+  background-size: cover; /* Adjust the image size to cover the entire element */
+  height: 100vh;
+  width: 195vh;
+  color: white; 
+  position: absolute;
+  top: 2650%;
+}
 
-form { 
-	position: relative;
-	top: 1800px;
+.background-2 h1 {
+	position: absolute;
+	top: 35%;
+	left: 33%;
+	justify-content: center;
 
 }
+
+.search-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+			position: relative;
+	top: 1600px;
+        }
+
+        .search-box {
+            width: 600px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-btn {
+            padding: 10px 20px;
+            background-color: #391919;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 		   </style>
 		<title>VacaRecommender</title>
 	</head>
@@ -59,14 +91,14 @@ form {
 			<h2> Team Epsilon </h2>
 			<h3>Momina Mim, Tahsina Sukur </h3>
         </div>
-	<p> </p>
 
-		<form action="search" method="get">
-			<fieldset>
-				<legend>Search by City Name:</legend>
-				<input id="description" name="city" type="text" />
-				<input type="submit" />
-			</fieldset>
+		<div class="background-2">
+			<h1>ENTER THE CITY YOU WANT TO GO TO</h1>
+		  </div>
+	<div class="search-container">
+        <input type="text" class="search-box" placeholder="Search...">
+        <button class="search-btn">Next</button>
+    </div>
 		</form>
 	</body>
 </html>
