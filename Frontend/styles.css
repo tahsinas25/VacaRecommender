@@ -1,24 +1,80 @@
+.title{
+    position: absolute; 
+    top: 47%;
+    left: 35%; 
+}
+
+.title h1{
+position: relative;
+top: 90%;
+color: rgb(255, 255, 255);
+font-size: 70px;
+}
+.title h2{
+position: absolute;
+top: 270%;
+left: 35%;
+color: rgb(255, 255, 255);
+font-size: 35px;
+}
+
+.title h3{
+position: absolute;
+top: 300%;
+left: 30%;
+color: rgb(255, 255, 255);
+font-size: 20px;
+}
+
 body {
-    background-color: rgba(43, 35, 2, 0.267);
+background-image: url("image2.jpg");
+position: relative;
+left: 10px;
+top: 0px;
+background-repeat: no-repeat;
+background-size: cover;
+}	
+.background-2 {
+background-image: url('image3.png');
+background-repeat: no-repeat;
+background-size: cover; /* Adjust the image size to cover the entire element */
+height: 100vh;
+width: 195vh;
+color: white; 
+position: absolute;
+top: 2650%;
 }
-body, form{
-    margin:20px auto;
-    max-width:800px;
-    overflow-x:hidden;
+
+.background-2 h1 {
+    position: absolute;
+    top: 35%;
+    left: 33%;
+    justify-content: center;
+
 }
-fieldset{
+
+.search-container {
     display: flex;
-    height: 60px;
+    justify-content: center;
+    margin-top: 50px;
+    position: relative;
+    top: 1600px;
 }
-legend {
-    color: #731702;
-    font-size: 26px;
+
+.search-box {
+    width: 600px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
 }
-label, input {
-    font-size: 22px;
-    color: #578BF2;
-}
-input#description{
-    flex-grow:50;
-    margin: 0 20px;
+
+.search-btn {
+    padding: 10px 20px;
+    background-color: #391919;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }

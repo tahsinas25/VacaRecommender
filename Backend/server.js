@@ -77,7 +77,7 @@ function request_handler(req, res) {
             console.log('Error parsing JSON:', err)
         }
         // process the plan array 
-        let trip = ''
+        let trip = `<div class="trip">`
         for(i = 0; i < body.length; i++) {
             trip += `Day: ${body[i]['day']} \n`
             let activities = body[i]['activities']  // json object containing all the activities
@@ -85,7 +85,6 @@ function request_handler(req, res) {
                 trip += `Time: ${activities[j]['time']} \n Description: ${activities[j]['description']}\n`
             }
         }
-        console.log(trip)
         res.write(trip, () => {});
         res.end()
     }
