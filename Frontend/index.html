@@ -38,7 +38,7 @@ body {
  background-size: cover;
 }	
 .background-2 {
-  background-image: url('image3.jpg');
+  background-image: url('image3.png');
   background-repeat: no-repeat;
   background-size: cover; /* Adjust the image size to cover the entire element */
   height: 100vh;
@@ -96,9 +96,11 @@ body {
 			<h1>ENTER THE CITY YOU WANT TO GO TO</h1>
 		  </div>
 	<div class="search-container">
-        <input type="text" class="search-box" placeholder="Search...">
-        <button class="search-btn">Next</button>
-    </div>
+		<form action="search" method="get">
+				<input id="description" name="city" type="text" class="search-box" placeholder="Search...">
+				<button type="submit" class="search-btn">Next</button>
+		</form>
+	</div> 
 		</form>
 	</body>
 </html>
