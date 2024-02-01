@@ -52,7 +52,6 @@ function request_handler(req, res) {
 	            response.on('end', function () {
 		            body = Buffer.concat(chunks);
                     plan = `<p>${body}</p>`
-                    console.log(plan)
                     process_plan(plan)
                 });  
             });
@@ -67,7 +66,7 @@ function request_handler(req, res) {
 
 
     function process_plan(response) {
-        res.write("<h1>Trip Plan</h1><break><break><break><p>You're Welcome!</p>", () => {});
+        res.write("<h1>Trip Plan</h1><br><br><p>You're Welcome!</p>", () => {});
         let body = cheerio.load(response)('p').text();
         try {
             body = JSON.parse(body)
@@ -77,15 +76,24 @@ function request_handler(req, res) {
             console.log('Error parsing JSON:', err)
         }
         // process the plan array 
-        let trip = `<div class="trip">`
+        let trip = ``
         for(i = 0; i < body.length; i++) {
-            trip += `Day: ${body[i]['day']} \n`
+            trip += `<h5>Day: ${body[i]['day']}</h5><br>`
             let activities = body[i]['activities']  // json object containing all the activities
             for(j = 0; j < activities.length; j++) {
-                trip += `Time: ${activities[j]['time']} \n Description: ${activities[j]['description']}\n`
+                trip += `<h6>Time - ${activities[j]['time']} </h6><br> <p>Plan - ${activities[j]['description']}<p>`
             }
         }
-        res.write(trip, () => {});
+        res.writeHead(200, {"Content-Type": "text/html"});
+        res.write(`
+            <script>
+                //sendind trip plan to the client side 
+                function displayTrip(trip) {
+                    updateTrip(trip)
+                }    
+                displayTrip(${JSON.stringify(trip)})
+            </script>
+        `);
         res.end()
     }
 }
