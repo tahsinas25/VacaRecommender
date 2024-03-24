@@ -2,7 +2,7 @@
 
 Web Application: Vaca Recommender
 Team Name: Epsilon 
-Team Members: Momina Mim, Tahsina Sukur, Abida Sultana, and Prachi D Purkaystha
+Team Members: Momina Mim, Tahsina Sukur, and Abida Sultana
 
 VacaRecommender generates a day-long trip given the city name. 
 
